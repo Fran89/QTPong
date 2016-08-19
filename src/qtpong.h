@@ -2,6 +2,7 @@
 #define QTPONG_H
 
 #include <QMainWindow>
+#include <QGraphicsScene>
 
 namespace Ui {
 class QTPong;
@@ -17,6 +18,7 @@ public:
 
 private:
     Ui::QTPong *ui;
+    QGraphicsScene *myScene;
 };
 
 #endif // QTPONG_H

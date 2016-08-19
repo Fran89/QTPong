@@ -6,6 +6,7 @@ QTPong::QTPong(QWidget *parent) :
     ui(new Ui::QTPong)
 {
     ui->setupUi(this);
+    myScene = new QGraphicsScene;
 }
 
 QTPong::~QTPong()
