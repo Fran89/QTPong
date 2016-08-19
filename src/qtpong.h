@@ -3,6 +3,7 @@
 
 #include <QMainWindow>
 #include <QGraphicsScene>
+#include <QGraphicsRectItem>
 
 namespace Ui {
 class QTPong;
