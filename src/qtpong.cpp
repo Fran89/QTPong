@@ -9,7 +9,6 @@ QTPong::QTPong(QWidget *parent) :
     myScene = new QGraphicsScene;
     myScene->setSceneRect(0,0,1024,512); // This size is an example one for now
     setupGame();
-    ui->graphicsView->setScene(myScene);
 }
 
 QTPong::~QTPong()
@@ -19,12 +18,26 @@ QTPong::~QTPong()
 }
 
 void QTPong::setupGame(){
-    p1Paddle = new QGraphicsRectItem;
-    p1Paddle->setRect(50,150,20,100);
-    p2Paddle = new QGraphicsRectItem;
-    p2Paddle->setRect(974,150,20,100);
+    p1Paddle = new QGraphicsRectItem; // Create new Rectangle
+    p1Paddle->setRect(50,206,20,100); // Placen into pos
+    p2Paddle = new QGraphicsRectItem; // Create another Rectangle
+    p2Paddle->setRect(974,206,20,100); // Place into pos
 
-    myScene->addItem(p1Paddle);
-    myScene->addItem(p2Paddle);
+    myScene->addRect(0,0,1024,512); // Playing field
+
+    myScene->addItem(p1Paddle); // add rect1 (it's pos is now 0,0 within the scene)
+    myScene->addItem(p2Paddle); // add rect2 (likewise)
+
+    ui->graphicsView->setScene(myScene); // Start Scene
+}
+
+void QTPong::keyPressEvent(QKeyEvent *key){ // Let's overwrite this protected function
+    int currentpos = p1Paddle->y();
+    if (key->key() == Qt::Key_2 && currentpos < 204){
+            p1Paddle->setY(currentpos+5);
+    } else
+    if(key->key() == Qt::Key_8 && currentpos > -204){
+            p1Paddle->setY(currentpos-5);
+    }
 
 }

@@ -4,6 +4,7 @@
 #include <QMainWindow>
 #include <QGraphicsScene>
 #include <QGraphicsRectItem>
+#include <QKeyEvent>
 
 namespace Ui {
 class QTPong;
@@ -21,6 +22,8 @@ private:
     Ui::QTPong *ui;
     QGraphicsScene *myScene;
     QGraphicsRectItem *p1Paddle, *p2Paddle;
+
+    void keyPressEvent(QKeyEvent *key);
 
     void setupGame();
 };
