@@ -19,6 +19,8 @@ public:
 private:
     Ui::QTPong *ui;
     QGraphicsScene *myScene;
+
+    void setupGame();
 };
 
 #endif // QTPONG_H

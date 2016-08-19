@@ -13,4 +13,9 @@ QTPong::QTPong(QWidget *parent) :
 QTPong::~QTPong()
 {
     delete ui;
+    delete myScene;
+}
+
+void QTPong::setupGame(){
+
 }
