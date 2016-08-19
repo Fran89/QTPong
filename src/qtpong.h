@@ -19,6 +19,7 @@ public:
 private:
     Ui::QTPong *ui;
     QGraphicsScene *myScene;
+    QGraphicsRectItem *p1Paddle, *p2Paddle;
 
     void setupGame();
 };

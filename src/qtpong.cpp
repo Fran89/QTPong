@@ -17,5 +17,8 @@ QTPong::~QTPong()
 }
 
 void QTPong::setupGame(){
+    p1Paddle = new QGraphicsRectItem;
+    p2Paddle = new QGraphicsRectItem;
+
 
 }
