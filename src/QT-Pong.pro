@@ -13,8 +13,10 @@ TEMPLATE = app
 
 
 SOURCES += main.cpp\
-        qtpong.cpp
+        qtpong.cpp \
+    game.cpp
 
-HEADERS  += qtpong.h
+HEADERS  += qtpong.h \
+    game.h
 
 FORMS    += qtpong.ui
