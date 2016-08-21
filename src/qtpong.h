@@ -22,10 +22,18 @@ private:
     Ui::QTPong *ui;
     QGraphicsScene *myScene;
     QGraphicsRectItem *p1Paddle, *p2Paddle;
+    QGraphicsEllipseItem *ball;
 
     void keyPressEvent(QKeyEvent *key);
 
     void setupGame();
+
+private slots:
+
+    void startRound();
+    void pointP1();
+    void pointP2();
+
 };
 
 #endif // QTPONG_H

@@ -9,6 +9,9 @@ QTPong::QTPong(QWidget *parent) :
     myScene = new QGraphicsScene;
     myScene->setSceneRect(0,0,1024,512); // This size is an example one for now
     setupGame();
+
+    connect(ui->pushButton,SIGNAL(clicked(bool)),this,SLOT(startRound()));
+
 }
 
 QTPong::~QTPong()
@@ -39,5 +42,19 @@ void QTPong::keyPressEvent(QKeyEvent *key){ // Let's overwrite this protected fu
     if(key->key() == Qt::Key_8 && currentpos > -204){
             p1Paddle->setY(currentpos-5);
     }
+
+}
+
+void QTPong::startRound(){
+    ball = new QGraphicsEllipseItem;
+    ball->setRect(487,231,50,50);
+    myScene->addItem(ball);
+}
+
+void QTPong::pointP1(){
+
+}
+
+void QTPong::pointP2(){
 
 }
